@@ -7,14 +7,18 @@ PhoneBookApp.module("LoginPage.Registration", function (Registration, PhoneBookA
     ///////////////////////////////////////////
     var API = {
         showRegistrationForm: function () {
-            var regFormForm = new Registration.RegistrationForm({});
-            PhoneBookApp.mainRegion.show(regFormForm);
+            console.log("showRegistrationForm")
+            Backbone.history.navigate("registration",{trigger:true})
+            //var regFormForm = new Registration.RegistrationForm({});
+            //PhoneBookApp.mainRegion.show(regFormForm);
         },
         signup: function (model) {
             model.save();
         },
         back: function () {
-           PhoneBookApp.trigger("loginform:show");
+            console.log("back")
+            Backbone.history.navigate("login",{trigger:true});
+           //PhoneBookApp.trigger("loginform:show");
         }
     };
 

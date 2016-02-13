@@ -9,7 +9,11 @@ PhoneBookApp.addRegions({
 
 PhoneBookApp.on("start", function () {
     console.log("init:after");
-    PhoneBookApp.trigger("loginform:show");
+    if (Backbone.history)
+        Backbone.history.start();
+    if (Backbone.history.fragment === "")
+        Backbone.history.navigate("login", {trigger: true});
+    //PhoneBookApp.trigger("loginform:show");
 
 });
 

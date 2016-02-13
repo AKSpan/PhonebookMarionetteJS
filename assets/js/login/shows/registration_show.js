@@ -39,8 +39,6 @@ PhoneBookApp.module("LoginPage.Registration", function (Registration, PhoneBookA
             else {
                 this.model.set({password: ""});
             }
-
-
         },
         updateCssStyle: function (e) {
             var changed = e.currentTarget;

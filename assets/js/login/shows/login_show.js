@@ -7,8 +7,8 @@ PhoneBookApp.module("LoginPage", function (LoginPage, PhoneBookApp, Backbone, Ma
             login: "",
             password: ""
         },
-        usernameLength: 5,
-        passwordLength: 3,
+        usernameLength: PhoneBookApp.request("global:usernamelength"),
+        passwordLength:  PhoneBookApp.request("global:passwordlentgth"),
         url: '/pb/login',
         isModelValid: function () {
             return this.isPasswordValid() && this.isUserNameValid();
