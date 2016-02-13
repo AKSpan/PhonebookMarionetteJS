@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>PhoneBook</title>
     <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/application.css" rel="stylesheet">
 </head>
 <body>
 <div class="page-header">
@@ -25,10 +26,13 @@
 <script src="assets/js/app.js"></script>
 <script src="assets/js/login/login_show.js"></script>
 <script src="assets/js/login/login_controller.js"></script>
+<script src="assets/js/login/registration_controller.js"></script>
+<script src="assets/js/login/registration_show.js"></script>
 
 
+<!-- TEMPLATES -->
 <script type="text/template" id="login-form-template">
-    <div style="width: 200px;margin-left: 580px;" class="form-horizontal">
+    <div class="form-horizontal login-block">
         <div class="form-group">
             <label for="js-form-user-login">Login</label>
             <input type="text" class="form-control" id="js-form-user-login" placeholder="Username">
@@ -40,8 +44,36 @@
         <div style="margin-left: -15px;">
             <p>
                 <button type="button" class="btn btn-primary" id="js-login-form-registration">Registration</button>
-                <button type="button" class="btn btn-success" style="left:55px; position: relative;"
-                        id="js-login-form-signin">Sing in
+                <button type="button" class="btn btn-success login-block-signin" id="js-login-form-signin">Sing in
+                </button>
+            </p>
+        </div>
+    </div>
+</script>
+<script type="text/template" id="registration-from-template">
+    <div class="form-horizontal login-block ">
+        <div class="form-group">
+            <label for="js-form-user-login-registration">Username</label>
+            <input type="text" class="form-control" id="js-form-user-login-registration" placeholder="Username">
+            <span id="js-form-user-login-registration-span"></span>
+        </div>
+        <div class="form-group">
+            <label for="js-form-user-login-pass1">Password</label>
+            <input type="password" class="form-control" id="js-form-user-login-pass1" placeholder="Password">
+            <span id="js-form-user-login-pass1-span"></span>
+
+        </div>
+        <div class="form-group">
+            <label for="js-form-user-login-pass2">Confirm password</label>
+            <input type="password" class="form-control" id="js-form-user-login-pass2" placeholder="Confirm password">
+            <span id="js-form-user-login-pass2-span"></span>
+
+        </div>
+        <div style="margin-left: -15px;">
+            <p>
+                <button type="button" class="btn btn-primary" id="js-login-form-back">Back</button>
+                <button type="button" class="btn btn-success login-block-signin disabled" id="js-login-form-signup">Sing
+                    up
                 </button>
             </p>
         </div>

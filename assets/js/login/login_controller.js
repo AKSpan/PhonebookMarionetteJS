@@ -7,15 +7,14 @@ PhoneBookApp.module("LoginPage", function (LoginPage, PhoneBookApp, Backbone, Ma
     ///////////////////////////////////////////
     var API = {
         showLoginForm: function () {
-            console.log("API:showLoginForm")
             var loginForm = new LoginPage.LoginForm({});
             PhoneBookApp.mainRegion.show(loginForm);
         },
-        signin: function (username,password) {
-            console.info("LOGINPAGE:API:login",username,password)
+        signin: function (model) {
+            model.save();
         },
         registration: function () {
-            console.info("LOGINPAGE:API:registration")
+            PhoneBookApp.trigger("regform:show");
         }
     };
 
