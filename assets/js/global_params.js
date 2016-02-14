@@ -2,7 +2,7 @@
  * Created by Alexey on 13.02.2016.
  */
 PhoneBookApp.module("GlobalVars", function (GlobalVars, PhoneBookApp, Backbone, Marionette, $, _) {
-    var userNameLength = 6, passwordLentgth = 6;
+    var userNameLength = 3, passwordLentgth = 3;
     PhoneBookApp.reqres.setHandler("global:usernamelength", function () {
         return userNameLength;
     });

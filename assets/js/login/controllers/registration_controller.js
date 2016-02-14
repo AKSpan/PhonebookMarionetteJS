@@ -7,18 +7,15 @@ PhoneBookApp.module("LoginPage.Registration", function (Registration, PhoneBookA
     ///////////////////////////////////////////
     var API = {
         showRegistrationForm: function () {
-            console.log("showRegistrationForm")
-            Backbone.history.navigate("registration",{trigger:true})
-            //var regFormForm = new Registration.RegistrationForm({});
-            //PhoneBookApp.mainRegion.show(regFormForm);
+            var regFormForm = new PhoneBookApp.LoginPage.Registration.RegistrationForm({});
+            PhoneBookApp.mainRegion.show(regFormForm);
         },
         signup: function (model) {
+            console.log("controller signup", model)
             model.save();
         },
         back: function () {
-            console.log("back")
             Backbone.history.navigate("login",{trigger:true});
-           //PhoneBookApp.trigger("loginform:show");
         }
     };
 
@@ -27,14 +24,14 @@ PhoneBookApp.module("LoginPage.Registration", function (Registration, PhoneBookA
     /////////////////LISTENERS/////////////////
     ///////////////////////////////////////////
     PhoneBookApp.on("regform:show", function () {
-        console.log("regform:show")
+        Backbone.history.navigate("registration");
         API.showRegistrationForm();
     });
     PhoneBookApp.on("regform:back", function () {
         API.back();
     });
-    PhoneBookApp.on("regform:signup", function (username, password) {
-        API.signin(username, password);
+    PhoneBookApp.on("regform:signup", function (model) {
+        API.signup(model);
     });
 
 });

@@ -22,23 +22,28 @@ PhoneBookApp.module("LoginPage.Registration", function (Registration, PhoneBookA
         setUserData: function (e) {
             var changed = e.currentTarget;
             var value = $(e.currentTarget).val();
+            var isPass = false;
             switch (changed.id) {
                 case "js-form-user-login-registration":
                     this.model.set({login: value});
                     break;
                 case "js-form-user-login-pass1":
                     this.tempPass1 = value;
+                    isPass = true;
                     break;
                 case "js-form-user-login-pass2":
                     this.tempPass2 = value;
+                    isPass = true;
                     break;
             }
-            if (this.model.isTempPassValid(this.tempPass1) && this.tempPass1 === this.tempPass2 && this.model.isUserNameValid()) {
-                this.model.set({password: value});
-            }
-            else {
-                this.model.set({password: ""});
-            }
+            //flag
+            if (isPass)
+                if (this.model.isTempPassValid(this.tempPass1) && this.tempPass1 === this.tempPass2 && this.model.isUserNameValid()) {
+                    this.model.set({password: value});
+                }
+                else {
+                    this.model.set({password: ""});
+                }
         },
         updateCssStyle: function (e) {
             var changed = e.currentTarget;
@@ -78,6 +83,10 @@ PhoneBookApp.module("LoginPage.Registration", function (Registration, PhoneBookA
         },
         backToLoginForm: function () {
             PhoneBookApp.trigger("regform:back");
+        },
+        signUp: function () {
+            console.log("view signup");
+            PhoneBookApp.trigger("regform:signup", this.model);
         }
     });
 

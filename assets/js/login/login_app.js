@@ -5,20 +5,21 @@ PhoneBookApp.module("LoginPageApp", function (LoginPageApp, PhoneBookApp, Backbo
     PhoneBookApp.LoginRouter = Marionette.AppRouter.extend({
         appRoutes: {
             "login": "loginPage",
-            "registration": "registrationPage"
+            "registration": "registrationPage",
+            "contacts": "showUserContacts"
         }
 
     });
     var API = {
         loginPage: function () {
-            console.log("loginPage router");
             PhoneBookApp.trigger("loginform:show")
         },
         registrationPage: function () {
-            console.log("registrationPage router");
-
-            var regFormForm = new PhoneBookApp.LoginPage.Registration.RegistrationForm({});
-            PhoneBookApp.mainRegion.show(regFormForm);
+            PhoneBookApp.trigger("regform:show")
+        },
+        showUserContacts: function () {
+            console.log("show user contacts");
+            PhoneBookApp.trigger("")
         }
     };
     PhoneBookApp.addInitializer(function () {
