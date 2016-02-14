@@ -30,6 +30,9 @@
 <script src="assets/js/login/controllers/login_controller.js"></script>
 <script src="assets/js/login/controllers/registration_controller.js"></script>
 <script src="assets/js/login/shows/registration_show.js"></script>
+<script src="assets/js/contacts/contacts_app.js"></script>
+<script src="assets/js/contacts/shows/contacts_show.js"></script>
+<script src="assets/js/contacts/controllers/contacts_controller.js"></script>
 
 
 <!-- TEMPLATES -->
@@ -80,6 +83,28 @@
             </p>
         </div>
     </div>
+</script>
+<script type="text/template" id="contact-form-template">
+    <td><%= firstName %></td>
+    <td><%= secondName %></td>
+    <td><%= thirdName %></td>
+    <td><%= phoneNumber %></td>
+    <td>
+        <button id="<%= id %>" class="btn btn-sm"><i class="glyphicon-eye-open"></i>Show more</button>
+    </td>
+</script>
+<script type="text/template" id="contacts-list-template">
+    <thead>
+    <tr>
+        <th>First Name</th>
+        <th>Second Name</th>
+        <th>Third Name</th>
+        <th>Phone Number</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
 </script>
 <script type="text/javascript">
     PhoneBookApp.start();

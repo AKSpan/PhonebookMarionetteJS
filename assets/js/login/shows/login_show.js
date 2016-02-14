@@ -24,7 +24,6 @@ PhoneBookApp.module("LoginPage", function (LoginPage, PhoneBookApp, Backbone, Ma
         }
     });
 
-
     LoginPage.LoginForm = Marionette.ItemView.extend({
         template: "#login-form-template",
         model: null,

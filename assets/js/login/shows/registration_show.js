@@ -36,7 +36,6 @@ PhoneBookApp.module("LoginPage.Registration", function (Registration, PhoneBookA
                     isPass = true;
                     break;
             }
-            //flag
             if (isPass)
                 if (this.model.isTempPassValid(this.tempPass1) && this.tempPass1 === this.tempPass2 && this.model.isUserNameValid()) {
                     this.model.set({password: value});

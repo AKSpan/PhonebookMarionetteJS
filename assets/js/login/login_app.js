@@ -6,7 +6,6 @@ PhoneBookApp.module("LoginPageApp", function (LoginPageApp, PhoneBookApp, Backbo
         appRoutes: {
             "login": "loginPage",
             "registration": "registrationPage",
-            "contacts": "showUserContacts"
         }
 
     });
@@ -17,10 +16,6 @@ PhoneBookApp.module("LoginPageApp", function (LoginPageApp, PhoneBookApp, Backbo
         registrationPage: function () {
             PhoneBookApp.trigger("regform:show")
         },
-        showUserContacts: function () {
-            console.log("show user contacts");
-            PhoneBookApp.trigger("")
-        }
     };
     PhoneBookApp.addInitializer(function () {
         new PhoneBookApp.LoginRouter({

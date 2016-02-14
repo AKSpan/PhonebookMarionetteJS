@@ -23,7 +23,7 @@ PhoneBookApp.module("LoginPage", function (LoginPage, PhoneBookApp, Backbone, Ma
     /////////////////LISTENERS/////////////////
     ///////////////////////////////////////////
     PhoneBookApp.on("loginform:show", function () {
-        console.log("ON:loginform:show")
+        console.log("ON:loginform:shows")
         API.showLoginForm();
     });
     PhoneBookApp.on("loginform:registration", function () {

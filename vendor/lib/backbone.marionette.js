@@ -539,7 +539,7 @@ Marionette.triggerMethod = (function(){
 
 Marionette.MonitorDOMRefresh = (function(){
   // track when the view has been shown in the DOM,
-  // using a Marionette.Region (or by other means of triggering "show")
+  // using a Marionette.Region (or by other means of triggering "shows")
   function handleShow(view){
     view._isShown = true;
     triggerDOMRefresh(view);
@@ -1317,7 +1317,7 @@ Marionette.View = Backbone.View.extend({
     Marionette.unbindEntityEvents(this, this.collection, Marionette.getOption(this, "collectionEvents"));
   },
 
-  // Internal method, handles the `show` event.
+  // Internal method, handles the `shows` event.
   onShowCalled: function(){},
 
   // Default `close` implementation, for removing a view from the
@@ -1544,7 +1544,7 @@ Marionette.CollectionView = Marionette.View.extend({
   },
 
   // Internal method to loop through each item in the
-  // collection view and show it
+  // collection view and shows it
   showCollection: function(){
     var ItemView;
     this.collection.each(function(item, index){
@@ -1553,7 +1553,7 @@ Marionette.CollectionView = Marionette.View.extend({
     }, this);
   },
 
-  // Internal method to show an empty view in place of
+  // Internal method to shows an empty view in place of
   // a collection of item views, when the collection is
   // empty
   showEmptyView: function(){
@@ -1616,10 +1616,10 @@ Marionette.CollectionView = Marionette.View.extend({
     // remove and/or close it later
     this.children.add(view);
 
-    // Render it and show it
+    // Render it and shows it
     this.renderItemView(view, index);
 
-    // call the "show" method if the collection view
+    // call the "shows" method if the collection view
     // has already been shown
     if (this._isShown){
       Marionette.triggerMethod.call(view, "show");
@@ -1682,9 +1682,9 @@ Marionette.CollectionView = Marionette.View.extend({
     this.triggerMethod("item:removed", view);
   },
 
-  // helper to show the empty view if the collection is empty
+  // helper to shows the empty view if the collection is empty
   checkEmpty: function() {
-    // check if we're empty now, and if we are, show the
+    // check if we're empty now, and if we are, shows the
     // empty view
     if (!this.collection || this.collection.length === 0){
       this.showEmptyView();
