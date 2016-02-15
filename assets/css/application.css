@@ -1,9 +1,10 @@
 .login-block {
     width: 200px;
-    margin-left: 580px;
+    margin-left: 400px;
 }
 
-.login-block-signin {
-    left: 55px;
-    position: relative;
+#main-region {
+    width: 1000px;
+    margin-left: 250px;
+    margin-top: -10px;
 }

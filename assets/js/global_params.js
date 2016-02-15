@@ -34,12 +34,23 @@ PhoneBookApp.module("GlobalVars", function (GlobalVars, PhoneBookApp, Backbone, 
             },
             {
                 id: 4,
-                'firstName': "",
-                'secondName': "",
-                'thirdName': "",
-                'phoneNumber': ""
+                'firstName': "D1",
+                'secondName': "D2",
+                'thirdName': "D3",
+                'phoneNumber': "D4"
             }
         ]);
         return contacts;
+    });
+    PhoneBookApp.reqres.setHandler("contacts:test:one", function () {
+        var contact = new PhoneBookApp.Contacts.ContactData(
+            {
+                id: 100500,
+                'firstName': "Name",
+                'secondName': "Surname",
+                'thirdName': "WTF Name",
+                'phoneNumber': "911"
+            });
+        return contact;
     });
 });

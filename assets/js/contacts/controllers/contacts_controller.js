@@ -14,9 +14,10 @@ PhoneBookApp.module("Contacts", function (Contacts, PhoneBookApp, Backbone, Mari
             var contactsForm = new Contacts.ContactsListView({
                 collection: contacts
             });
-            console.log(contactsForm);
             PhoneBookApp.mainRegion.show(contactsForm);
-            console.log("after show");
+        },
+        showContact: function (id) {
+            console.log("contacts:api:showContact:id",id)
         }
 
     };
@@ -28,5 +29,9 @@ PhoneBookApp.module("Contacts", function (Contacts, PhoneBookApp, Backbone, Mari
     PhoneBookApp.on("contacts:show", function () {
         console.log("ON:contacts:shows")
         API.showContactsList();
+    });
+    PhoneBookApp.on("contact:show", function (id) {
+        console.log("on:contact:shows")
+        API.showContact(id);
     });
 });

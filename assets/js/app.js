@@ -11,9 +11,13 @@ PhoneBookApp.on("start", function () {
     console.log("init:after");
     if (Backbone.history)
         Backbone.history.start();
-    if (Backbone.history.fragment === "")
-        Backbone.history.navigate("contacts", {trigger: true});
-       // Backbone.history.navigate("login", {trigger: true});
+   /* if (Backbone.history.fragment === "")
+        Backbone.history.navigate("login", {trigger: true});*/
+    var contact = PhoneBookApp.request("contacts:test:one");
+    console.log("contact",contact)
+    var view = new PhoneBookApp.Contacts.ShowMoreContact({model:contact});
+    console.log("view",view)
+    PhoneBookApp.mainRegion.show(view)
 
 });
 

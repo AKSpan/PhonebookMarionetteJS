@@ -11,7 +11,8 @@ PhoneBookApp.module("LoginPage", function (LoginPage, PhoneBookApp, Backbone, Ma
             PhoneBookApp.mainRegion.show(loginForm);
         },
         signin: function (model) {
-            model.save();
+            //model.save();
+            Backbone.history.navigate("contacts", {trigger: true});
         },
         registration: function () {
             PhoneBookApp.trigger("regform:show");
